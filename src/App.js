@@ -7,11 +7,12 @@ import 'react-chat-widget/lib/styles.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 import uuid from 'react-uuid'
+import logo from './avatar_melinda.gif';
 
 function App() {
     const [cookies, setCookie, removeCookie] = useCookies(['cookie-name']);
 
-    const host = window.location.href.startsWith('http://localhost') ? 'http://localhost:5000' : 'https://flask-chat-backend.herokuapp.com'
+    const host = window.location.href
 
     useEffect(() => {
         toggleWidget()
@@ -76,8 +77,10 @@ function App() {
     return (
         <div className="App">
             <Widget
-                title="Amirs Chat Bot"
-                subtitle=""
+                profileAvatar={logo}
+                titleAvatar={logo}
+                title="Melinda"
+                subtitle="My Digital Companion"
                 handleNewUserMessage={handleNewUserMessage}
                 fullScreenMode={false}
                 showCloseButton={false}
